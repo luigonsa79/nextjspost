@@ -1,0 +1,1 @@
+export const BASE_PATH = "https://gonzacr.com/rest/api/"
