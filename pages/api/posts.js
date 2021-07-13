@@ -20,7 +20,20 @@ export async function getAllPostsbyCategoryApi(category) {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.log(erro);
+    console.log(error);
+    return null;
+  }
+}
+
+export async function getPostbySlugApi(slug){
+  try {
+    // https://gonzacr.com/rest/api/posts/otro-post-react/
+    const url = `${BASE_PATH}posts/${slug}/`
+    const response = await fetch(url);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
     return null;
   }
 }

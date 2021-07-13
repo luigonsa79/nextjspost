@@ -17,7 +17,7 @@ export default function Category() {
     useEffect(() => {
         (async () => {
             const response = await getAllPostsbyCategoryApi(query.category);
-            console.log(response);
+            // console.log(response);
             setPostCat(response);
 
         })()
@@ -28,7 +28,7 @@ export default function Category() {
 
             {!postCat && <Spinner />}
 
-            {postCat && size(postCat) === 0 && (<div><h3>Error en la consulta o no hay registros</h3></div>)}
+            {postCat && size(postCat) === 0 && (<div><h3>Proximamente :)</h3></div>)}
 
             {size(postCat) > 0 && (
                 <ListPostCat postCat={postCat} />

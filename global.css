@@ -11,3 +11,13 @@
   .overflow .card-img-top:hover {
     transform: scale(1.8);
   }
+  .bg-green {
+    background-color: rgb(2, 255, 2);
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .bg-red{
+    background-color: rgb(175, 6, 6);
+  }

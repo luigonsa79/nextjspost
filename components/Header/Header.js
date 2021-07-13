@@ -21,7 +21,7 @@ function MenuCategories(props) {
   const { categories } = props;
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-red">
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav me-auto">

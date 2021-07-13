@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function ListPostCat(props) {
   const { postCat } = props;
 
-  console.log(postCat);
+  // console.log(postCat);
 
   return (
     <div className="row">
       {map(postCat, (post) => (
-        <PostCat postCat={post} />
+        <PostCat postCat={post} key={post.id}/>
       ))}
     </div>
   );

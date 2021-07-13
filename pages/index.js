@@ -9,7 +9,7 @@ import ListPosts from '../components/ListPosts'
 export default function Home() {
   const [posts, setPosts] = useState(null);
 
-  console.log(posts);
+  // console.log(posts);
 
   useEffect(() => {
     (async () => {
