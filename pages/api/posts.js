@@ -11,3 +11,16 @@ export async function getAllPosts() {
     return null;
   }
 }
+
+export async function getAllPostsbyCategoryApi(category) {
+  try {
+    // https://gonzacr.com/rest/api/posts/?category__slug=react
+    const url = `${BASE_PATH}posts/?category__slug=${category}`;
+    const response = await fetch(url);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(erro);
+    return null;
+  }
+}

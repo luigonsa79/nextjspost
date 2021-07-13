@@ -1,48 +1,48 @@
 import { map } from "lodash";
 import Link from "next/link";
 
-export default function ListPosts(props) {
-  const { posts } = props;
+export default function ListPostCat(props) {
+  const { postCat } = props;
 
-  console.log(posts);
+  console.log(postCat);
 
   return (
     <div className="row">
-      {map(posts, (post) => (
-        <Post post={post} />
+      {map(postCat, (post) => (
+        <PostCat postCat={post} />
       ))}
     </div>
   );
 }
 
-function Post(props) {
-  const { post } = props;
+function PostCat(props) {
+  const { postCat } = props;
   return (
     <div className="col-sm-3">
       <div className="card">
         <div className="card-body">
-          <Link href={`/posts/${post.slug}`}>
+          <Link href={`/posts/${postCat.slug}`}>
 
             <div className="overflow">
               <img
-                src={post.miniature}
-                alt={post.title}
+                src={postCat.miniature}
+                alt={postCat.title}
                 className="card-img-top"
               />
             </div>
 
           </Link>
-          <h5 className="card-title">{post.title}</h5>
+          <h5 className="card-title">{postCat.title}</h5>
           <div className="card-text">
             <span className="fst-italic fs-6">Categorias:</span>
             <span className="badge  text-dark">
-              <Link className="fw-light lh-lg" href={`/categories/${post.category.slug}`}>
-                <a className="lh-lg" >{post.category.title}</a>
+              <Link className="fw-light lh-lg" href={`/categories/${postCat.category.slug}`}>
+                <a className="lh-lg" >{postCat.category.title}</a>
               </Link>
             </span>
           </div>
           <div className="d-grid gap-2">
-            <Link className="fw-light lh-lg" href={`/posts/${post.slug}`}>
+            <Link className="fw-light lh-lg" href={`/posts/${postCat.slug}`}>
               <a className="lh-lg btn btn-primary" >Ver Articulo</a>
             </Link>
           </div>

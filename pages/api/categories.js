@@ -11,3 +11,4 @@ export async function getCategoriesApi(){
         return null;
     }
 }
+

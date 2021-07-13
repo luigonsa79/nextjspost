@@ -1,14 +1,14 @@
 import Basic from "../../layouts/Basic";
 import { useRouter } from "next/router"; 
 
-export default function Category() {
+export default function Post() {
 
     const {query} = useRouter();
-    // console.log(query);
+    console.log(query);
 
     return (
         <Basic>
-            <h2>Estamos en Post por categoria nombre {query.category}</h2>
+            <h2>Estamos en Post de nombre {query.post}</h2>
         </Basic>
     )
 }

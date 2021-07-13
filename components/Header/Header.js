@@ -25,9 +25,12 @@ function MenuCategories(props) {
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav me-auto">
+              <Link href={`/`}>
+                <a className="nav-link">Home</a>
+              </Link>
               {map(categories, (category) => (
                 <li className="nav-item" key={category.id}>
-                  <Link href={`/posts/${category.slug}`}>
+                  <Link href={`/categories/${category.slug}`}>
                     <a className="nav-link">{category.title}</a>
                   </Link>
                 </li>
@@ -36,6 +39,6 @@ function MenuCategories(props) {
           </div>
         </div>
       </nav>
-       </div>
+    </div>
   );
 }
