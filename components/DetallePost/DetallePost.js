@@ -19,13 +19,20 @@ export default function DetallePost(props) {
 function PostDetalle(props) {
   const { detalle } = props;
 
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
+
   return (
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
           <Image
+            loader={myLoader}
             src={detalle.image_producto}
             alt={detalle.nombre_producto}
+            width={450}
+            height={600}
             className="img-fluid rounded-start"
           />
         </div>

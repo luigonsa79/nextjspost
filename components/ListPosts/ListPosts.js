@@ -1,18 +1,18 @@
 import { map } from "lodash";
 import Link from "next/link";
-import { Image } from 'next/image';
+import Image from 'next/image';
 
 export default function ListPosts(props) {
   const { posts } = props;
 
   const productos = posts.results;
 
-  // console.log(productos);
+  // console.log(posts);
 
   return (
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       {map(productos, (post) => (
-        <Post post={post} key={post.id_producto} />
+        <Post productos={post} key={post.url_producto} />
       ))}
     </div>
   );
@@ -57,32 +57,42 @@ export default function ListPosts(props) {
 // }
 
 function Post(props) {
-  const { post } = props;
+  const { productos } = props;
+  // console.log(productos);
+
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
+
   return (
     <div className="col">
       <div className="card mb-3">
-        <h3 className="card-header text-center text-white bg-danger">
-          {post.nombre_producto}
-        </h3>
+        <p className="card-header text-center text-white bg-danger">
+          {productos.nombre_producto}
+        </p>
         <div className="card-body">
           <h5 className="card-title text-muted fst-italic fs-6">Categoria</h5>
           <h6 className="card-subtitle">
-            <Link  href={`/categories/${post.url_categoria}`}>
-              <a className="badge bg-green text-dark">{post.nombre_categoria}</a>
+            <Link href={`/categories/${productos.url_categoria}`}>
+              <a className="badge bg-green text-dark">{productos.nombre_categoria}</a>
             </Link></h6>
         </div>
         {/* imagen */}
-        <Link href={`/posts/${post.url_producto}`}>
+        <Link href={`/posts/${productos.url_producto}`}>
           <div className="overflow">
             <Image
-              src={post.image_producto}
-              alt={post.nombre_producto}
+              loader={myLoader}
+              src={productos.image_producto}
+              alt={productos.nombre_producto}
+              width={450}
+              height={600}
               className="card-img-top"
             />
+
           </div>
         </Link>
         <div className="card-footer text-muted text-center">
-          <Link className="fw-light lh-lg" href={`/posts/${post.url_producto}`}>
+          <Link className="fw-light lh-lg" href={`/posts/${productos.url_producto}`}>
             <a className="lh-lg btn btn-outline-danger">Ver Articulo</a>
           </Link>
         </div>
