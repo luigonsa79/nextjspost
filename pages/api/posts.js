@@ -2,7 +2,8 @@ import { BASE_PATH } from "../../utils/constants";
 
 export async function getAllPosts() {
   try {
-    const url = `${BASE_PATH}posts/`;
+    // https://api.gonzacr.com/relations?rel=productos,categorias&type=producto,categoria&orderBy=id_producto&orderMode=DESC
+    const url = `${BASE_PATH}/relations?rel=productos,categorias&type=producto,categoria&orderBy=id_producto&orderMode=DESC`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
@@ -12,10 +13,10 @@ export async function getAllPosts() {
   }
 }
 
-export async function getAllPostsbyCategoryApi(category) {
+export async function getAllPostsbyCategoryApi(url_categoria) {
   try {
-    // https://gonzacr.com/rest/api/posts/?category__slug=react
-    const url = `${BASE_PATH}posts/?category__slug=${category}`;
+    // https://api.gonzacr.com/relations?rel=productos,categorias&type=producto,categoria&linkTo=url_categoria&equalTo=servicios
+    const url = `${BASE_PATH}/relations?rel=productos,categorias&type=producto,categoria&linkTo=url_categoria&equalTo=${url_categoria}`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
@@ -25,11 +26,12 @@ export async function getAllPostsbyCategoryApi(category) {
   }
 }
 
-export async function getPostbySlugApi(slug){
+export async function getPostbySlugApi(url_producto){
   try {
-    // https://gonzacr.com/rest/api/posts/otro-post-react/
-    const url = `${BASE_PATH}posts/${slug}/`
+    // https://api.gonzacr.com/productos?linkTo=url_producto&equalTo=microfono-xk-1226
+    const url = `${BASE_PATH}/productos?linkTo=url_producto&equalTo=${url_producto}`
     const response = await fetch(url);
+    // console.log(response.results);
     const result = await response.json();
     return result;
   } catch (error) {

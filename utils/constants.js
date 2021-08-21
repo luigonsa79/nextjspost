@@ -1,1 +1,1 @@
-export const BASE_PATH = "https://gonzacr.com/rest/api/"
+export const BASE_PATH = "https://api.gonzacr.com"

@@ -17,7 +17,7 @@ export default function Post() {
         (async () => {
             const response = await getPostbySlugApi(query.post);
             // console.log(response);
-            setDetalle(response);
+            setDetalle(response.results);
         })()
     }, [query])
 
