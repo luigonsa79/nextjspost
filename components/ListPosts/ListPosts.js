@@ -1,5 +1,6 @@
 import { map } from "lodash";
 import Link from "next/link";
+import { Image } from 'next/image';
 
 export default function ListPosts(props) {
   const { posts } = props;
@@ -73,7 +74,7 @@ function Post(props) {
         {/* imagen */}
         <Link href={`/posts/${post.url_producto}`}>
           <div className="overflow">
-            <img
+            <Image
               src={post.image_producto}
               alt={post.nombre_producto}
               className="card-img-top"

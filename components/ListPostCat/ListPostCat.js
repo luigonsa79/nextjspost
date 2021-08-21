@@ -1,5 +1,6 @@
 import { map } from "lodash";
 import Link from "next/link";
+import { Image } from 'next/image';
 
 export default function ListPostCat(props) {
   const { postCat } = props;
@@ -26,7 +27,7 @@ function PostCat(props) {
           <Link href={`/posts/${categorias.url_categoria}`}>
 
             <div className="overflow">
-              <img
+              <Image
                 src={categorias.image_categoria}
                 alt={categorias.nombre_categoria}
                 className="card-img-top"

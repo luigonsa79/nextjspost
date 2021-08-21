@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { map } from "lodash";
 
 export default function DetallePost(props) {
@@ -22,7 +23,7 @@ function PostDetalle(props) {
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
-          <img
+          <Image
             src={detalle.image_producto}
             alt={detalle.nombre_producto}
             className="img-fluid rounded-start"
