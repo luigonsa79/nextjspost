@@ -5,7 +5,7 @@
   "homepage": "http://luigonsa79.github.io/nextjspost",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
